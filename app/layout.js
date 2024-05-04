@@ -1,4 +1,7 @@
 import "../sass/globals.scss";
+import "../components/regions/Header";
+import Header from "../components/regions/Header";
+import Footer from "../components/regions/Footer";
 
 export const metadata = {
   title: "IST 363 Spotify",
@@ -9,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import Showcase from '../components/custom/Showcase'
+
 function HomePage() {
  const [artists, setArtist] = useState([]);
  const [isLoading, setIsLoading] = useState(true);
@@ -23,13 +25,13 @@ function HomePage() {
  if (isLoading) return <p>Loading...</p>;
  if (error) return <p>Error loading artists</p>;
 
- console.log({artists});
+ //console.log({artists});
 
  return (
-  <div>{artists.map((artist) => {
-    return <h1 key={artist.id}>{artist.name}</h1>
-  })}</div>
+ <main>
+  <Showcase/>
+ </main>
  );
-}
+};
 
 export default HomePage;
