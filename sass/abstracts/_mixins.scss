@@ -89,11 +89,11 @@
     }
     }
     @mixin generatePaddingClasses() {
-      $side: top, right, bottom, left;
-
-      @each $side in $side {
+      $sides: top, right, bottom, left;
+    
+      @each $side in $sides {
         @for $i from 1 through 6 {
-          &.padding-#{side}-#{$i} {
+          &.padding-#{$side}-#{$i} {
             padding-#{$side}: #{$i}rem;
           }
         }

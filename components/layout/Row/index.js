@@ -11,8 +11,8 @@ const Row = ({alignItems, borderTop, borderBottom, children, justifyContent, pad
         [`align-items-${alignItems}`]:alignItems,
         [`border-top-${borderTop}`]:borderTop,
         [`border-bottom-${borderBottom}`]:borderBottom,
-        [`padding-top${paddingTop}`]: paddingTop,
-        [`padding-bottom${paddingBottom}`]: paddingBottom,
+        [`padding-top-${paddingTop}`]: paddingTop,
+        [`padding-bottom-${paddingBottom}`]: paddingBottom,
     });
     return<div className={rowClasses}>{children}</div>
 };
