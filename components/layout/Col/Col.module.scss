@@ -5,4 +5,5 @@
     width:100%;
     padding: 0 1rem;
     @include mixins.genrateColClasses();
+    @include mixins.generateTextAlignClasses();
 } 

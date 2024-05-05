@@ -1,29 +1,15 @@
-import classnames from "classnames/bind";
+import Logo from "../../custom/Logo";
 import styles from "./Header.module.scss";
-
-//const cx = classnames.bind(styles); //which class to make conditional
+import Heading from "@/components/html/Heading";
 
 const Header = () => {
     return (
         <header className={styles.header}>
-            Spotify logo
+            <Logo fill="white" />
             <br/>
-            Top 10 artists
+           <Heading level={1}>Top 10 Artists</Heading>
         </header>
     );
 };
-// const Header = ({children, level, marginTop, marginRight, marginBottom, marginLeft}) => {
-//     const Tag = `h${level}`;
-
-//     const headingClasses = cx({
-//         heading: true,
-//         [`heading--${level}`]: level,
-//         [`margin-top--${marginTop}`]: marginTop,
-//         [`margin-right--${marginRight}`]: marginRight,  
-//         [`margin-bottom--${marginBottom}`]: marginBottom,
-//         [`margin-left--${marginLeft}`]: marginLeft,  
-//     });
-//     return<Tag className={headingClasses}>{children}</Tag>
-// };
 
 export default Header;
