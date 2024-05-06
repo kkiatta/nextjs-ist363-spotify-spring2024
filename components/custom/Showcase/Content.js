@@ -8,7 +8,7 @@ import Row from '@/components/layout/Row';
 
 import styles from "./Showcase.module.scss"
 
-const ShowcaseContent = ({items, activeIndex, setActiveIndex})  => {
+const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  => {
     const headlineVariants ={
         initial: { opacity: 0, x: -100 },
         animate: { opacity: 1, x: 0},
@@ -70,12 +70,30 @@ const ShowcaseContent = ({items, activeIndex, setActiveIndex})  => {
                     setActiveIndex(activeIndex >= items.length  -1 ? items.length - 1: activeIndex +1);
                 }} />
                 </Row>
-                </Col>
+            </Col>
+            {latestRelease && (
             <Col md={5}>
                 <div className={styles.showcase__latest}>
-                    <Heading level={3}>Lastest release</Heading>
+                    <Row>
+                        <Col>
+                        <Image 
+                        src={latestRelease.images[0].url}
+                        alt={latestRelease.name}
+                        width={latestRelease.images[0].width}
+                        height={latestRelease.images[0].height}
+                        className={styles.album__cover}
+                        />
+                        </Col>
+                        <Col> 
+                        {" "}
+                        <Heading level={3}>Lastest release</Heading> 
+                        <p>{latestRelease.name}</p>
+                        <p>{latestRelease.release_date}</p>
+                        </Col>
+                    </Row>
                     </div>
                 </Col>
+                )}
             <Col md={6} textAlign="right">
                 <ButtonUI label="View artist page" icon="faArrowRight" />
             </Col>

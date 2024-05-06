@@ -28,6 +28,8 @@ function HomePage() {
  //console.log({artists});
 
  return (
+
+  
  <main>
   <Showcase items={artists}/>
  </main>
