@@ -4,6 +4,7 @@ import ButtonUI from "../../html/ButtonUI"
 import Col from '@/components/layout/Col';
 import Container from '../../layout/Container'
 import Heading from "@/components/html/Heading";
+import Image from "next/image";
 import Row from '@/components/layout/Row';
 
 import styles from "./Showcase.module.scss"
@@ -75,7 +76,7 @@ const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  =
             <Col md={5}>
                 <div className={styles.showcase__latest}>
                     <Row>
-                        <Col>
+                        <Col xs={4} sm={4}>
                         <Image 
                         src={latestRelease.images[0].url}
                         alt={latestRelease.name}
@@ -84,11 +85,16 @@ const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  =
                         className={styles.album__cover}
                         />
                         </Col>
-                        <Col> 
-                        {" "}
+                        <Col xs={8} sm={8}> 
                         <Heading level={3}>Lastest release</Heading> 
-                        <p>{latestRelease.name}</p>
-                        <p>{latestRelease.release_date}</p>
+                        <Heading level={4}>{latestRelease.name}</Heading> 
+                        <Heading level={5}>
+                            {
+                            // 2024-04-19
+                            // split: ["2024", "04", "19"] split them into array
+                            //[0] pick the first index in the array
+                            latestRelease.release_date.split("-")[0]}
+                            </Heading>
                         </Col>
                     </Row>
                     </div>

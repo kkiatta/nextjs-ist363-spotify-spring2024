@@ -7,7 +7,7 @@ export async function GET (request) {
     const  token = await getAccessToken();
 
     const apiResponse = await fetch(
-    `https://api.spotify.com/v1/artists${id}/albums}`,
+    `https://api.spotify.com/v1/artists/${id}/albums`,
     {
     headers: {
         Authorization: `Bearer ${token}`,
