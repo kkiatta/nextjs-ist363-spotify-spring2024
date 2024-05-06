@@ -1,10 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faAngleLeft, faAngleRight, faArrowRight} from "@fortawesome/free-solid-svg-icons"
+import {
+    faAngleLeft, 
+    faAngleRight, 
+    faArrowDown, 
+    faArrowRight, 
+    faAngleDown,
+    faXmark 
+} from "@fortawesome/free-solid-svg-icons"
 
 const icons = {
     faAngleLeft : faAngleLeft,
     faAngleRight : faAngleRight,
     faArrowRight : faArrowRight,
+    faArrowDown : faArrowDown,
+    faAngleDown : faAngleDown,
+    faXmark : faXmark,
 };
 
 const Icon = ({icon}) => {

@@ -1,8 +1,9 @@
 @use "../../sass/abstracts/mixins";
+@use "../../sass/abstracts/vars";
 
 .paragraph{
     font-size: 1rem;
-    font-family: Arial;
+    font-family: vars.$font__regular;
     &.intro{
         font-size: 1.5rem;
         font-family: georgia;

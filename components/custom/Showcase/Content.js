@@ -61,14 +61,14 @@ const ShowcaseContent = ({
                 </span>
                 </motion.div>
                 </Col>
-            <Col xs={9} md={6}>
+            <Col xs={9} md={6} textAlign="right">
                 <motion.h2 
                 variants={headlineVariants}
                 initial="initial"
                 animate="animate"
                 exit="exit"
                 //initial, animate, and exit value need to coresponse to const headlineVariants value
-                className={styles.showcase__artist}
+                className={styles.showcase__artist__name}
                 key={`artist-${activeIndex}`}
                 >
                     {items[activeIndex].name}
