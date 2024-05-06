@@ -9,7 +9,19 @@ import Row from '@/components/layout/Row';
 
 import styles from "./Showcase.module.scss"
 
-const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  => {
+const ShowcaseContent = ({
+    activeIndex, 
+    items, 
+    isExpanded, 
+    latestRelease, 
+    setActiveIndex, 
+    setIsExpanded,
+})  => {
+    const sectionVariants = {
+        initial: { opacity: 0, y: 100 },
+        animate: { opacity: 1, y: 0},
+        exit: { opacity: 0, y: 100 },
+    }
     const headlineVariants ={
         initial: { opacity: 0, x: -100 },
         animate: { opacity: 1, x: 0},
@@ -22,7 +34,13 @@ const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  =
     }
 
     return (        
-    <div className={styles.showcase__content}>
+    <motion.div 
+    className={styles.showcase__content}
+    vairants={sectionVariants}
+    initial="initial"
+    animate={isExpanded ? "exit" : "animate"}
+    exit="exit"
+    >
     <Container>
         <Row alignItems="flex-end" paddingBottom={2}>
             <Col md={1}>
@@ -101,11 +119,17 @@ const ShowcaseContent = ({activeIndex, items, latestRelease, setActiveIndex})  =
                 </Col>
                 )}
             <Col md={6} textAlign="right">
-                <ButtonUI label="View artist page" icon="faArrowRight" />
+                <ButtonUI 
+                label="View artist page" 
+                icon="faArrowRight" 
+                clickHandler={() => {
+                    setIsExpanded(true);
+                }}
+                />
             </Col>
         </Row>
     </Container>
-    </div>
+    </motion.div>
     )
 };
 

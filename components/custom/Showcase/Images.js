@@ -1,9 +1,22 @@
-import styles from "./Showcase.module.scss"
+import classnames from 'classnames/bind';
+
+import styles from "./Showcase.module.scss";
+
 import Image from "next/image";
 
-const ShowcaseImages = ({items, activeIndex}) => {
-    return <div className={styles.showcase__images}>
-    <ul className={styles.showcase__images__list} 
+const cx = classnames.bind(styles);
+
+const ShowcaseImages = ({activeIndex, isExpanded, items }) => {
+
+    const showcaseImageClasses = cx({
+        showcase__images: true,
+        expanded: isExpanded,
+    });
+
+    return (
+    <div className={showcaseImageClasses}>
+    <ul 
+    className={styles.showcase__images__list} 
     style={{
         width: `${items.length * 100}%`,
         transform: `translateX(-${(activeIndex / items.length) * 100}%)`
@@ -24,5 +37,6 @@ const ShowcaseImages = ({items, activeIndex}) => {
         })}
     </ul>
 </div>
+    )
 }
 export default ShowcaseImages

@@ -3,12 +3,16 @@ import { AnimatePresence } from "framer-motion";
 
 import ShowcaseContent from './Content';
 import ShowcaseImages from "./Images";
-
+import ShowcaseExpandedContent from './ExpandedContent';
 import styles from './Showcase.module.scss';
 
 const Showcase = ({items}) => {
         const [activeIndex, setActiveIndex] = useState(0);
         const [albums, setAlbums] = useState([]);
+        const [isExpanded, setIsExpanded] = useState(false) ;
+        //True False variable, name variable like a question
+        //False get stored in isExpanded
+        //setIsExpanded update to true or false depend on what happening with the click
 
     useEffect(() => {
         //console.log("use effect for showcase")
@@ -30,13 +34,23 @@ const Showcase = ({items}) => {
     return ( 
         <div className={styles.showcase}>
         <AnimatePresence>
-        <ShowcaseImages items={items} activeIndex={activeIndex}/>
+        <ShowcaseImages 
+        items={items} 
+        activeIndex={activeIndex} 
+        isExpanded={isExpanded}
+        />
+        {!isExpanded ? (
         <ShowcaseContent 
         items={items} 
         activeIndex={activeIndex} 
         setActiveIndex={setActiveIndex}
         latestRelease={albums.length > 0 ? albums[0] : null}
+        isExpanded={isExpanded}
+        setIsExpanded={setIsExpanded}
         />
+        ) : (
+            <ShowcaseExpandedContent />
+        )}
         </AnimatePresence>
         </div>
 );
