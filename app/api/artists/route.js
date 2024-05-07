@@ -7,16 +7,44 @@ export async function GET () {
 
     const artists = [
         {
-         name: "Taylor Swift",
-         spotify_id: "06HL4z0CvFAxyc27GXpf02",
+         name: "D Gerrand",
+         spotify_id: "1k7MP2tMC43vM0b0wg8HHg",
         },
         {
-         name: "Beyoncé",
-         spotify_id: "6vWDO969PvNqNYHIOW5v0m",
+         name: "BodySlam",
+         spotify_id: "76VTagPgPgPlFE7hfjT0Zt",
         },
         {
-         name: "Ariana Grande",
-         spotify_id: "66CXWjxzNUsdJxJ2JdwvnR",
+         name: "Saran",
+         spotify_id: "3moR9d0X97NAtZRhHWOta5",
+        },
+        {
+         name: "The Gentle Men",
+         spotify_id: "3EYR1xDK06J61ois35DHbS",
+        },
+        {
+         name: "Elton John",
+         spotify_id: "3PhoLpVuITZKcymswpck5b",
+        },
+        {
+         name: "Bruno Mars",
+         spotify_id: "0du5cEVh5yTK9QJze8zA0C",
+        },
+        {
+         name: "Kenshi Yonezu",
+         spotify_id: "1snhtMLeb2DYoMOcVbb8iB",
+        },
+        {
+         name: "Ado",
+         spotify_id: "6mEQK9m2krja6X1cfsAjfl",
+        },
+        {
+         name: "OFFICIAL HIGE DANDISM",
+         spotify_id: "5Vo1hnCRmCM6M4thZCInCj",
+        },
+        {
+         name: "Hikaru Utada",
+         spotify_id: "7lbSsjYACZHn1MSDXPxNF2",
         },
        ];
        

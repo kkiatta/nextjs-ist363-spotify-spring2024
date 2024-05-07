@@ -108,6 +108,7 @@
             //background-color: lightblue;
             padding-top: 2rem;
             padding-bottom: 2rem;
+            min-height: 100vh;
         }
     }
 }
@@ -122,6 +123,7 @@
     font-family: vars.$font__fat;
     line-height: 0.75;
     text-transform: uppercase;
+    hyphens: manual;
     @include mixins.breakpoint(laptop){
         font-size: 6rem;
     }
