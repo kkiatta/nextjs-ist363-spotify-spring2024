@@ -14,6 +14,7 @@ const Showcase = ({items}) => {
         const [activeIndex, setActiveIndex] = useState(0);
         const [albums, setAlbums] = useState([]);
         const [isExpanded, setIsExpanded] = useState(false) ;
+        const [toptracks, setTopTracks] = useState([])
         //True False variable, name variable like a question
         //False get stored in isExpanded
         //setIsExpanded update to true or false depend on what happening with the click
@@ -31,9 +32,25 @@ const Showcase = ({items}) => {
             console.log(error);
         }
     }
-    },[activeIndex]);
+    },[activeIndex, items]);
 
     console.log({albums});
+
+    useEffect(() => {
+        if (items.length > 0) {
+            try{
+            fetch((`/api/top-tracks?id=${items[activeIndex].id}`))
+            .then((res) => res.json())
+            .then((data) => {
+             setTopTracks(data.items)
+        });
+        } catch (error) {
+        console.log(error);
+    }
+    }
+    },[activeIndex, items]);
+
+    console.log({toptracks})
 
     const showcaseClasses = cx({
         showcase:true,
